@@ -1,0 +1,54 @@
+{% extends "base.html" %} {% block title %} Todo List Page {% endblock %}
+{% block content %}
+<h2 class="mb-2 text-lg font-semibold text-gray-900 text-6xl">Table List</h2>
+
+
+<div class="relative overflow-x-auto">
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 ">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 ">
+            <tr>
+                <th scope="col" class="px-6 py-3">
+                    Owner
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Plate No.
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Age
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    National ID
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Address
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for vehicle in vehicles %}
+            <tr class="bg-white border-b ">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
+                    {{vehicle.owner }}
+                </th>
+                <td class="px-6 py-4">
+                    {{vehicle.plate_number }}
+                </td>
+                <td class="px-6 py-4">
+                    {{vehicle.age }}
+                </td>
+                <td class="px-6 py-4">
+                    {{vehicle.national_id }}
+                </td>
+                <td class="px-6 py-4">
+                    {{vehicle.address }}
+                </td>
+            </tr>
+           
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+{% endblock %}
+
